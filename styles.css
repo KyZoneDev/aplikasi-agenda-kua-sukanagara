@@ -1,0 +1,351 @@
+/* =========================================
+   🌿 KUA Sukanagara Web Style
+   Desain modern minimalis — putih, biru, hijau pastel
+   ========================================= */
+
+:root {
+  --primary: #1d4ed8;    /* biru utama */
+  --primary-hover: #2563eb;
+  --accent: #16a34a;     /* hijau KUA */
+  --bg: #f8fbff;
+  --text: #111827;
+  --muted: #6b7280;
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(0,0,0,0.05);
+  --transition: all 0.25s ease;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  margin: 0;
+  padding: 0;
+}
+
+/* 🌈 Animasi Fade Global */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🔹 Kartu umum */
+.card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  animation: fadeIn 0.8s ease;
+}
+
+/* 🔹 Tombol */
+.btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn.primary:hover {
+  background: var(--primary-hover);
+  transform: scale(1.03);
+}
+
+.btn.ghost {
+  background: white;
+  color: var(--primary);
+  border: 1px solid #d1d5db;
+}
+
+.btn.ghost:hover {
+  background: #eff6ff;
+  transform: scale(1.03);
+}
+
+/* 🔹 Input dan Textarea */
+input, textarea, select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.15);
+}
+
+/* 🔹 Header global */
+header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  padding: 12px 0;
+  z-index: 10;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 16px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.brand-icon {
+  color: var(--accent);
+  font-size: 1.4rem;
+}
+
+/* 🔹 Navigasi umum */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  display: block;
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+nav a:hover {
+  background: #eff6ff;
+  color: var(--primary);
+  transform: translateX(4px);
+}
+
+nav a.active {
+  background: var(--primary);
+  color: white;
+}
+
+/* 🔹 Grid Layout */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+@media (max-width: 800px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 🔹 Daftar item */
+.item {
+  border-bottom: 1px solid #f0f1f4;
+  padding: 10px 0;
+  transition: background 0.2s;
+}
+
+.item:hover {
+  background: #f9fbff;
+}
+
+.item strong {
+  color: var(--primary);
+}
+
+.item-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+/* 🔹 Text & utility */
+h3 {
+  color: var(--primary);
+  margin-top: 0;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 0.85rem;
+}
+
+.center {
+  text-align: center;
+}
+
+/* 🔹 Scrollbar lembut (khusus Android Chrome) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* =========================================
+   🌙 DARK MODE GLOBAL STYLE
+   ========================================= */
+.dark-mode {
+  --bg: #0f172a;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --primary: #60a5fa;
+  --primary-hover: #93c5fd;
+  --accent: #34d399;
+  --shadow: 0 4px 15px rgba(255,255,255,0.05);
+}
+
+.dark-mode body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.dark-mode header {
+  background: #1e293b;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
+.dark-mode .card {
+  background: #1e293b;
+  box-shadow: 0 4px 15px rgba(255,255,255,0.05);
+}
+
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select {
+  background: #0f172a;
+  color: var(--text);
+  border: 1px solid #475569;
+}
+
+.dark-mode nav a {
+  color: var(--text);
+}
+
+.dark-mode nav a:hover {
+  background: #334155;
+  color: var(--primary);
+}
+
+.dark-mode .btn.ghost {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid #475569;
+}
+
+.dark-mode .item:hover {
+  background: #1e293b;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+/* =========================================
+   ✏️ PERBAIKAN TEKS SURAT & AGENDA SAAT DARK MODE
+   ========================================= */
+.dark-mode .item strong {
+  color: #93c5fd; /* biru muda lembut agar kontras di background gelap */
+}
+
+.dark-mode h3 {
+  color: #60a5fa; /* judul seperti 'Tulis Surat' & 'Daftar Surat' jadi lebih terang */
+}
+
+.dark-mode label {
+  color: #e2e8f0; /* teks label form lebih terang */
+}
+
+.dark-mode .muted {
+  color: #94a3b8; /* teks tambahan tetap lembut tapi terbaca */
+}
+
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* =========================================
+   🖋️ SIGNATURE WATERMARK KYZONE STYLE
+   ========================================= */
+@font-face {
+  font-family: 'Pacifico';
+  src: local('Pacifico'),
+       url('https://fonts.gstatic.com/s/pacifico/v22/FwZY7-Qmy14u9lezJ96A4sijpFu_.woff2') format('woff2');
+  font-display: swap;
+}
+
+/* =========================================
+   🖋️ FIXED SIGNATURE WATERMARK KYZONE STYLE
+   ========================================= */
+.wm-signature {
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #2563eb;
+  margin-left: 8px;
+  opacity: 0.8;
+  letter-spacing: 0.4px;
+  transition: all 0.3s ease;
+  user-select: none;
+  vertical-align: middle;
+}
+
+.wm-signature:hover {
+  opacity: 1;
+  color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* 🌙 DARK MODE FIX */
+.dark-mode .wm-signature {
+  color: #93c5fd;
+  opacity: 0.85;
+}
+
+.dark-mode .wm-signature:hover {
+  color: #60a5fa;
+  opacity: 1;
+}
